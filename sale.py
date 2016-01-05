@@ -46,7 +46,7 @@ def get_item_by_name(name):
 def get_buy_button(item):
     s = """
 <!-- add to cart button -->
-<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<form class="addcart" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <!-- Identify your business so that you can collect the payments. -->
     <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
 
@@ -74,8 +74,10 @@ def get_item_display_info(item):
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
   <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
+  <!--
   <p>Item Number: %(item_number)s</p>
-  <b>$%(price)s&nbsp;&nbsp;</b>
+  -->
+  <div class="price"><b>$%(price)s&nbsp;&nbsp;</b></div>
   %(button)s
 </div>
 """

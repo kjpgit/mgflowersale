@@ -1,12 +1,16 @@
-h2 {
-    margin-top: 1.5em;
-    color: #008811;
-    background-color: #ddffdd;
-    text-align: center;
+.icon-bar {
+    background-color: black !important;
 }
 
 h1 {
     color: #008811 !important;
+}
+
+h2 {
+    color: #008811 !important;
+    background-color: #ddffdd;
+    margin-top: 1.5em;
+    text-align: center;
 }
 
 .jumbotron {
@@ -14,14 +18,11 @@ h1 {
 
 }
 
-.icon-bar {
-    background-color: black !important;
-}
 
 .item {
     margin-top: 50px;
 }
 
-form {
-    display: inline-block;
+.price {
+    float: left;
 }
