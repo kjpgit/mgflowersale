@@ -79,70 +79,421 @@
     </div>
 
     <div class="container">
-        <a name="plants"></a>
-        <h2>Plants</h2>
-
-      <!-- Example row of columns -->
+      <a name="plants"></a> <h2>Plants</h2>
       <div class="row">
-        <div class="col-md-4">
-          <h2>Plant 1</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Plant 2</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Plant 3</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
 
-        <div class="col-md-4">
-          <h2>Plant 4</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Plant 5</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Plant 6</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+<div class="col-md-4">
+  <h2>plant1 - 1.45</h2>
+  <p>Some Plant</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant1">
+    <input type="hidden" name="amount" value="1.45">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>plant2 - 2.45</h2>
+  <p>Another Plant</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant2">
+    <input type="hidden" name="amount" value="2.45">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>plant3 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant3">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>plant4 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant4">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>plant5 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant5">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>plant6 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="plant6">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
       </div>
 
-        <a name="shrubs"></a>
-        <h2>Shrubs</h2>
-
-      <!-- Example row 2 of columns -->
+      <a name="shrubs"></a> <h2>Shrubs</h2>
       <div class="row">
-        <div class="col-md-4">
-          <h2>Shrub 1</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Shrub 2</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Shrub 3</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
 
-        <div class="col-md-4">
-          <h2>Shrub 4</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+<div class="col-md-4">
+  <h2>shrub1 - 123.45</h2>
+  <p>Some Shrub</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="shrub1">
+    <input type="hidden" name="amount" value="123.45">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>shrub2 - 999.99</h2>
+  <p>Another Shrub</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="shrub2">
+    <input type="hidden" name="amount" value="999.99">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>shrub3 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="shrub3">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>shrub4 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="shrub4">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+      </div>
+
+      <a name="shrubs"></a> <h2>Flowers</h2>
+      <div class="row">
+
+<div class="col-md-4">
+  <h2>flower1 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="flower1">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>flower2 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="flower2">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>flower3 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="flower3">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>flower4 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="flower4">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
+
+<div class="col-md-4">
+  <h2>flower5 - 0.00</h2>
+  <p>No Description</p>
+  
+<!-- add to cart button -->
+<form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="flower5">
+    <input type="hidden" name="amount" value="0.00">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+</div>
       </div>
 
       <hr>
