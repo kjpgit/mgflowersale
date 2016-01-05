@@ -1,10 +1,22 @@
 h2 {
     margin-top: 1.5em;
-    color: #00cc11;
+    color: #008811;
     background-color: #ddffdd;
     text-align: center;
 }
 
+h1 {
+    color: #008811 !important;
+}
+
+.jumbotron {
+    background-color: #ddffdd;
+
+}
+
+.icon-bar {
+    background-color: black !important;
+}
 
 .item {
     margin-top: 2em;
