@@ -19,6 +19,9 @@ h1 {
 }
 
 .item {
-    margin-top: 2em;
+    margin-top: 50px;
 }
 
+form {
+    display: inline-block;
+}

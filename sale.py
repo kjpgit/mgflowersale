@@ -22,6 +22,9 @@ class Item(object):
 items = [
     Item("plant1", "1.45", "Some Plant"),
     Item("plant2", "2.45", "Another Plant"),
+    Item("plant3", "3.45", "Some Small Plant"),
+    Item("plant4", "4.45", "Some Medium Plant"),
+    Item("plant5", "5.45", "Some Large Plant"),
 
     Item("shrub1", "100.99", "Some Shrub"),
     Item("shrub2", "200.99", "Another Shrub"),
@@ -44,7 +47,6 @@ def get_buy_button(item):
     s = """
 <!-- add to cart button -->
 <form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-
     <!-- Identify your business so that you can collect the payments. -->
     <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
 
@@ -60,8 +62,6 @@ def get_buy_button(item):
     <!-- Display the payment button. -->
     <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
         alt="PayPal - The safer, easier way to pay online">
-    <img alt="" border="0" width="1" height="1"
-        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 </form>
 """
     return s % dict(item_name=item.item_name, amount=item.price,
@@ -75,7 +75,7 @@ def get_item_display_info(item):
   <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
   <p>Item Number: %(item_number)s</p>
-  <p><b>Price: $%(price)s</b></p>
+  <b>$%(price)s&nbsp;&nbsp;</b>
   %(button)s
 </div>
 """
