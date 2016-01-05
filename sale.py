@@ -5,13 +5,14 @@ import decimal
 
 
 class Item(object):
-    def __init__(self, name, price, desc):
+    def __init__(self, name, price, full_name):
         assert isinstance(name, str)
         assert isinstance(price, str)
-        assert isinstance(desc, str)
-        self.name = name
+        assert isinstance(full_name, str)
+        self.item_name = name
+        self.full_name = full_name
         self.price = decimal.Decimal(price)
-        self.description = desc
+        self.description = "Some description goes here"
 
 
 items = [
@@ -56,18 +57,23 @@ def get_buy_button(item):
         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 </form>
 """
-    return s % dict(item_name=item.name, amount=item.price)
+    return s % dict(item_name=item.item_name, amount=item.price)
 
 
 def get_buy_item(item):
     s = """
-<div class="col-md-4">
-  <h3>%(name)s - %(price)s</h3>
+<div class="item col-sm-6 col-md-4">
+<img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
+  <h4 class="xxtext-center">%(full_name)s</h4>
   <p>%(description)s</p>
+  <p>Item Name: %(item_name)s</p>
+  <p><b>Price: $%(price)s</b></p>
   %(button)s
 </div>
 """
-    return s % dict(name=item.name, 
+    return s % dict(
+        item_name=item.item_name,
+        full_name=item.full_name, 
         description=item.description,
         price=item.price,
         button=get_buy_button(item))
@@ -82,7 +88,7 @@ def expand(l):
 
     item_name_match = d["item_name_match"]
     for item in items:
-        if item.name.startswith(item_name_match):
+        if item.item_name.startswith(item_name_match):
             yield get_buy_item(item)
 
 
