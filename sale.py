@@ -17,8 +17,12 @@ class Item(object):
 items = [
     Item("plant1", "1.45", "Some Plant"),
     Item("plant2", "2.45", "Another Plant"),
-    Item("shrub1", "123.45", "Some Shrub"),
-    Item("shrub2", "999.99", "Another Shrub"),
+    Item("shrub1", "100.99", "Some Shrub"),
+    Item("shrub2", "200.99", "Another Shrub"),
+    Item("flower1", "1.99", "Flower One"),
+    Item("flower2", "2.99", "Flower Two"),
+    Item("flower3", "3.99", "Flower X"),
+    Item("flower4", "4.99", "Flower Y"),
     ]
 
 
@@ -76,16 +80,19 @@ def expand(l):
     l = l.strip()[1:]
     d = json.loads(l)
 
-    item = get_item_by_name(str(d["item"]))
-    return get_buy_item(item)
+    item_name_match = d["item_name_match"]
+    for item in items:
+        if item.name.startswith(item_name_match):
+            yield get_buy_item(item)
 
 
 def main():
     for l in sys.stdin:
         if l.strip().startswith("@{"):
-            l = expand(l)
-
-        sys.stdout.write(l)
+            for l in expand(l):
+                sys.stdout.write(l)
+        else:
+            sys.stdout.write(l)
 
 
 if __name__ == "__main__":
