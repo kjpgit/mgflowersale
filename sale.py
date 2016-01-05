@@ -62,7 +62,7 @@ def get_buy_button(item):
 def get_buy_item(item):
     s = """
 <div class="col-md-4">
-  <h2>%(name)s - %(price)s</h2>
+  <h3>%(name)s - %(price)s</h3>
   <p>%(description)s</p>
   %(button)s
 </div>
