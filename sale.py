@@ -10,20 +10,26 @@ class Item(object):
         assert isinstance(price, str)
         assert isinstance(item_name, str)
         self.item_number = item_number
-        self.item_name = item_name
         self.price = decimal.Decimal(price)
+        self.item_name = item_name
         self.description = "Some description goes here"
 
 
+#
+# Inventory
+# The order is useful; that's how they will be displayed on the page
+#
 items = [
     Item("plant1", "1.45", "Some Plant"),
     Item("plant2", "2.45", "Another Plant"),
+
     Item("shrub1", "100.99", "Some Shrub"),
     Item("shrub2", "200.99", "Another Shrub"),
-    Item("flower1", "1.99", "Flower One"),
-    Item("flower2", "2.99", "Flower Two"),
-    Item("flower3", "3.99", "Flower X"),
+
     Item("flower4", "4.99", "Flower Y"),
+    Item("flower3", "3.99", "Flower X"),
+    Item("flower2", "2.99", "Flower Two"),
+    Item("flower1", "1.99", "Flower One"),
     ]
 
 
@@ -31,7 +37,7 @@ def get_item_by_name(name):
     for i in items:
         if i.name == name:
             return i
-    return Item(name, "0.00", "No Description")
+    raise Exception("Item %r not found" % name)
     
 
 def get_buy_button(item):
@@ -62,7 +68,7 @@ def get_buy_button(item):
             item_number=item.item_number)
 
 
-def get_buy_item(item):
+def get_item_display_info(item):
     s = """
 <div class="item col-sm-6 col-md-4">
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
@@ -91,7 +97,7 @@ def expand(l):
     item_name_match = d["item_name_match"]
     for item in items:
         if item.item_number.startswith(item_name_match):
-            yield get_buy_item(item)
+            yield get_item_display_info(item)
 
 
 def main():
