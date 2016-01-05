@@ -5,12 +5,12 @@ import decimal
 
 
 class Item(object):
-    def __init__(self, name, price, full_name):
-        assert isinstance(name, str)
+    def __init__(self, item_number, price, item_name):
+        assert isinstance(item_number, str)
         assert isinstance(price, str)
-        assert isinstance(full_name, str)
-        self.item_name = name
-        self.full_name = full_name
+        assert isinstance(item_name, str)
+        self.item_number = item_number
+        self.item_name = item_name
         self.price = decimal.Decimal(price)
         self.description = "Some description goes here"
 
@@ -48,6 +48,7 @@ def get_buy_button(item):
 
     <!-- Specify details about the item that buyers will purchase. -->
     <input type="hidden" name="item_name" value="%(item_name)s">
+    <input type="hidden" name="item_number" value="%(item_number)s">
     <input type="hidden" name="amount" value="%(amount)s">
 
     <!-- Display the payment button. -->
@@ -57,23 +58,24 @@ def get_buy_button(item):
         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 </form>
 """
-    return s % dict(item_name=item.item_name, amount=item.price)
+    return s % dict(item_name=item.item_name, amount=item.price,
+            item_number=item.item_number)
 
 
 def get_buy_item(item):
     s = """
 <div class="item col-sm-6 col-md-4">
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
-  <h4 class="xxtext-center">%(full_name)s</h4>
+  <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
-  <p>Item Name: %(item_name)s</p>
+  <p>Item Number: %(item_number)s</p>
   <p><b>Price: $%(price)s</b></p>
   %(button)s
 </div>
 """
     return s % dict(
-        item_name=item.item_name,
-        full_name=item.full_name, 
+        item_number=item.item_number,
+        item_name=item.item_name, 
         description=item.description,
         price=item.price,
         button=get_buy_button(item))
@@ -88,7 +90,7 @@ def expand(l):
 
     item_name_match = d["item_name_match"]
     for item in items:
-        if item.item_name.startswith(item_name_match):
+        if item.item_number.startswith(item_name_match):
             yield get_buy_item(item)
 
 
