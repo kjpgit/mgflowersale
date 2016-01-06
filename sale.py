@@ -70,7 +70,7 @@ def get_buy_button(item):
 
 def get_item_display_info(item):
     s = """
-<div class="item col-sm-6 col-md-4">
+<div class="item col-sm-6 col-md-3">
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
   <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
