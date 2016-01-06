@@ -27,48 +27,6 @@
 
   <body>
 
-    <nav class="navbar xxnavbar-inverse xxnavbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-
-        <ul class="nav navbar-right navbar-nav">
-            <li><a href="#plants">Plants</a></li>
-            <li><a href="#shrubs">Shrubs</a></li>
-            <li><a href="#flowers">Flowers</a></li>
-            <li>
-<!-- view cart button -->
-<form class="navbar-form navbar-right" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-
-    <!-- Identify your business so that you can collect the payments. -->
-    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
-
-    <!-- Specify a PayPal Shopping Cart View Cart button. -->
-    <input type="hidden" name="cmd" value="_cart">
-    <input type="hidden" name="display" value="1">
-
-    <!-- Display the View Cart button. -->
-    <input type="image" name="submit" border="0"
-        src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif"
-       alt="PayPal - The safer, easier way to pay online">
-    <img alt="" border="0" width="1" height="1"
-        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-</form>
-            </li>
-        </ul>
-
-
-
-      </div>
-    </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -79,23 +37,40 @@
     </div>
 
     <div class="container">
-      <a name="plants"></a> <h2>Plants</h2>
-      <div class="row">
-          @{"item_name_match": "plant"}
-      </div>
 
-      <a name="shrubs"></a> <h2>Shrubs</h2>
-      <div class="row">
-          @{"item_name_match": "shrub"}
-      </div>
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Plants</a></li>
+          <li><a data-toggle="tab" href="#menu1">Shrubs</a></li>
+          <li><a data-toggle="tab" href="#menu2">Flowers</a></li>
+          <li>
+            @{"button": "view_cart"}
+          </li>
+        </ul>
 
-      <a name="flowers"></a> <h2>Flowers</h2>
-      <div class="row">
-          @{"item_name_match": "flower"}
-      </div>
+        <div class="tab-content">
 
-      <hr>
+            <div id="home" class="container tab-pane fade in active">
+                <h2>Plants</h2>
+                <div class="row">
+                    @{"item_name_match": "plant"}
+                </div>
+            </div>
 
+            <div id="menu1" class="container tab-pane fade">
+                <h2>Shrubs</h2>
+                <div class="row">
+                    @{"item_name_match": "shrub"}
+                </div>
+            </div>
+
+            <div id="menu2" class="container tab-pane fade">
+                <h2>Flowers</h2>
+                <div class="row">
+                    @{"item_name_match": "flower"}
+                </div>
+            </div>
+
+        </div> <!-- tab-content -->
     </div> <!-- /container -->
 
 

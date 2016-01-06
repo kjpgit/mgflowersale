@@ -33,6 +33,8 @@ items = [
     Item("flower3", "3.99", "Flower X"),
     Item("flower2", "2.99", "Flower Two"),
     Item("flower1", "1.99", "Flower One"),
+    Item("flower7", "7.99", "Flower 7"),
+    Item("flower8", "8.99", "Flower 8"),
     ]
 
 
@@ -41,6 +43,27 @@ def get_item_by_name(name):
         if i.name == name:
             return i
     raise Exception("Item %r not found" % name)
+
+
+def get_view_cart_button():
+    s = """
+<!-- view cart button -->
+<form class="navbar-form navbar-right" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart View Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="display" value="1">
+
+    <!-- Display the View Cart button. -->
+    <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif"
+       alt="PayPal - The safer, easier way to pay online">
+</form>
+"""
+    return s
     
 
 def get_buy_button(item):
@@ -70,7 +93,7 @@ def get_buy_button(item):
 
 def get_item_display_info(item):
     s = """
-<div class="item col-sm-6 col-md-4">
+<div class="item col-sm-4 col-md-3">
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
   <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
@@ -96,10 +119,15 @@ def expand(l):
     l = l.strip()[1:]
     d = json.loads(l)
 
-    item_name_match = d["item_name_match"]
-    for item in items:
-        if item.item_number.startswith(item_name_match):
-            yield get_item_display_info(item)
+    button = d.get("button", "")
+    if button:
+        assert button == "view_cart"
+        yield get_view_cart_button()
+    else:
+        item_name_match = d["item_name_match"]
+        for item in items:
+            if item.item_number.startswith(item_name_match):
+                yield get_item_display_info(item)
 
 
 def main():
