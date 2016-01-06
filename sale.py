@@ -117,7 +117,8 @@ def get_buy_button(item):
     %(options)s
 
     <!-- Display the payment button. -->
-    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+    <input type="image" name="submit" border="0" 
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
         alt="PayPal - The safer, easier way to pay online">
 </form>
 """
@@ -182,12 +183,12 @@ def expand(l):
         for item in g_items:
             if item.item_number.startswith(item_name_match):
                 yield get_item_display_info(item)
+                # clearfix so columns of unequal height don't mess up layout
                 n += 1
                 if n % 4 == 0:
                   yield """<div class="clearfix visible-md-block visible-lg-block"></div>"""
                 if n % 3 == 0:
                   yield """<div class="clearfix visible-sm-block"></div>"""
-
 
 
 def main():
