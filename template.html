@@ -28,52 +28,53 @@
   <body>
 
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
+
+  <div class="container">
+
+    <ul class="nav nav-pills xxnavbar-right">
+      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#menu0">Plants</a></li>
+      <li><a data-toggle="tab" href="#menu1">Shrubs</a></li>
+      <li><a data-toggle="tab" href="#menu2">Flowers</a></li>
+      <li>
+      @{"button": "view_cart"}
+      </li>
+    </ul>
+
+
+    <div class="tab-content">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div id="home" class="tab-pane fade in active">
+<div class="jumbotron">
         <h1>A Flower Sale!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
       </div>
-    </div>
+      </div>
 
+      <div id="menu0" class="tab-pane fade">
+        <h2>Plants</h2>
+        <div class="row">
+          @{"item_name_match": "plant"}
+        </div>
+      </div>
 
-    <div class="container">
+      <div id="menu1" class="tab-pane fade">
+        <h2>Shrubs</h2>
+        <div class="row">
+          @{"item_name_match": "shrub"}
+        </div>
+      </div>
 
-        <ul class="nav nav-pills xxnavbar-right">
-          <li class="active"><a data-toggle="tab" href="#home">Plants</a></li>
-          <li><a data-toggle="tab" href="#menu1">Shrubs</a></li>
-          <li><a data-toggle="tab" href="#menu2">Flowers</a></li>
-          <li>
-            @{"button": "view_cart"}
-          </li>
-        </ul>
+      <div id="menu2" class="tab-pane fade">
+        <h2>Flowers</h2>
+        <div class="row">
+          @{"item_name_match": "flower"}
+        </div>
+      </div>
 
-
-        <div class="tab-content">
-
-            <div id="home" class="xxcontainer tab-pane fade in active">
-                <h2>Plants</h2>
-                <div class="row">
-                    @{"item_name_match": "plant"}
-                </div>
-            </div>
-
-            <div id="menu1" class="xxcontainer tab-pane fade">
-                <h2>Shrubs</h2>
-                <div class="row">
-                    @{"item_name_match": "shrub"}
-                </div>
-            </div>
-
-            <div id="menu2" class="xxcontainer tab-pane fade">
-                <h2>Flowers</h2>
-                <div class="row">
-                    @{"item_name_match": "flower"}
-                </div>
-            </div>
-
-        </div> <!-- tab-content -->
-    </div> <!-- /container -->
+    </div> <!-- tab-content -->
+  </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
