@@ -58,6 +58,9 @@ get_item_by_code("shrub2").description = \
       "A really long boring description one two three four blah foo baz blah foo baz hello and more blahblah"
 
 
+get_item_by_code("shrub2").options = \
+        ("Color", ["Red", "Blue", "Pink", "White"])
+
 
 
 def get_view_cart_button():
@@ -97,13 +100,29 @@ def get_buy_button(item):
     <input type="hidden" name="item_number" value="%(item_number)s">
     <input type="hidden" name="amount" value="%(amount)s">
 
+    %(options)s
+
     <!-- Display the payment button. -->
     <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
         alt="PayPal - The safer, easier way to pay online">
 </form>
 """
+    options = ""
+    if item.options:
+        options += """
+            <br>
+            <input type="hidden" name="on0" value="%s"><b>Choose %s:</b>
+             <select name="os0">
+            """ % (item.options[0], item.options[0])
+
+        for opt in item.options[1]:
+            options += """<option value="%(v)s">%(v)s</option>""" % dict(v=opt)
+
+        options += """</select><br><div class=vspace></div>"""
+
+
     return s % dict(item_name=item.item_name, amount=item.price,
-            item_number=item.item_number)
+            item_number=item.item_number, options=options)
 
 
 def get_item_display_info(item):

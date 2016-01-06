@@ -27,3 +27,6 @@ h2 {
 .price {
     float: left;
 }
+.vspace {
+    height: 10px;
+}
