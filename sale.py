@@ -3,6 +3,50 @@ import sys
 import json
 import decimal
 
+g_items = []
+
+
+#
+# Inventory
+# The order is useful; that's how they will be displayed on the page
+#
+def load_data():
+    load_item("plant1", "1.45", "Some Plant")
+    load_item("plant2", "2.45", "Another Plant")
+    load_item("plant3", "3.45", "Some Small Plant")
+    load_item("plant4", "4.45", "Some Medium Plant")
+    load_item("plant5", "5.45", "Some Large Plant")
+
+    load_item("shrub1", "100.99", "Some Shrub")
+    load_item("shrub2", "200.99", "Another Shrub")
+
+    load_item("flower4", "4.99", "Flower Y")
+    load_item("flower3", "3.99", "Flower X")
+    load_item("flower2", "2.99", "Flower Two")
+    load_item("flower1", "1.99", "Flower One")
+    load_item("flower7", "7.99", "Flower 7")
+    load_item("flower8", "8.99", "Flower 8")
+
+
+    # Special
+    get_item_by_code("plant2").description = (
+          "A really long boring description one two "
+          "three four blah foo baz blah foo baz hello"
+          "alpha beta gamma zebra doh blah foo baz blah hello")
+    get_item_by_code("plant3").description = ""
+
+    get_item_by_code("shrub1").description = (
+          "A really long boring description one two "
+          "three four blah foo baz blah foo baz hello"
+          "alpha beta gamma zebra doh blah foo baz blah hello")
+    get_item_by_code("shrub2").description = (
+          "A really long boring description one two "
+          "three four blah foo baz blah foo baz hello")
+
+    get_item_by_code("shrub2").options = \
+            ("Color", ["Red", "Blue", "Pink", "White"])
+
+
 
 class Item(object):
     def __init__(self, item_number, price, item_name):
@@ -23,44 +67,14 @@ def get_item_by_code(code):
     raise Exception("Item %r not found" % code)
 
 
-
-#
-# Inventory
-# The order is useful; that's how they will be displayed on the page
-#
-g_items = [
-    Item("plant1", "1.45", "Some Plant"),
-    Item("plant2", "2.45", "Another Plant"),
-    Item("plant3", "3.45", "Some Small Plant"),
-    Item("plant4", "4.45", "Some Medium Plant"),
-    Item("plant5", "5.45", "Some Large Plant"),
-
-    Item("shrub1", "100.99", "Some Shrub"),
-    Item("shrub2", "200.99", "Another Shrub"),
-
-    Item("flower4", "4.99", "Flower Y"),
-    Item("flower3", "3.99", "Flower X"),
-    Item("flower2", "2.99", "Flower Two"),
-    Item("flower1", "1.99", "Flower One"),
-    Item("flower7", "7.99", "Flower 7"),
-    Item("flower8", "8.99", "Flower 8"),
-    ]
-
-
-# Special
-get_item_by_code("plant2").description = \
-      "A really long boring description one two three four blah foo baz blah foo baz hello"
-get_item_by_code("plant3").description = ""
-
-get_item_by_code("shrub1").description = \
-      "A really long boring description one two three four blah foo baz blah foo baz hello zebra plant"
-get_item_by_code("shrub2").description = \
-      "A really long boring description one two three four blah foo baz blah foo baz hello and more blahblah"
-
-
-get_item_by_code("shrub2").options = \
-        ("Color", ["Red", "Blue", "Pink", "White"])
-
+def load_item(*args, **kwargs):
+    item = Item(*args, **kwargs)
+    for i in g_items:
+        if i.item_number == item.item_number:
+            raise Exception("Duplicate item_number %r" % i.item_number)
+        if i.item_name == item.item_name:
+            raise Exception("Duplicate item_name %r" % i.item_name)
+    g_items.append(item)
 
 
 def get_view_cart_button():
@@ -177,6 +191,7 @@ def expand(l):
 
 
 def main():
+    load_data()
     for l in sys.stdin:
         if l.strip().startswith("@{"):
             for l in expand(l):
