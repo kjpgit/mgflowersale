@@ -52,6 +52,11 @@ get_item_by_code("plant2").description = \
       "A really long boring description one two three four blah foo baz blah foo baz hello"
 get_item_by_code("plant3").description = ""
 
+get_item_by_code("shrub1").description = \
+      "A really long boring description one two three four blah foo baz blah foo baz hello zebra plant"
+get_item_by_code("shrub2").description = \
+      "A really long boring description one two three four blah foo baz blah foo baz hello and more blahblah"
+
 
 
 
