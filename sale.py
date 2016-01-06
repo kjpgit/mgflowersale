@@ -13,13 +13,22 @@ class Item(object):
         self.price = decimal.Decimal(price)
         self.item_name = item_name
         self.description = "Some description goes here"
+        self.options = None
+
+
+def get_item_by_code(code):
+    for i in g_items:
+        if i.item_number == code:
+            return i
+    raise Exception("Item %r not found" % code)
+
 
 
 #
 # Inventory
 # The order is useful; that's how they will be displayed on the page
 #
-items = [
+g_items = [
     Item("plant1", "1.45", "Some Plant"),
     Item("plant2", "2.45", "Another Plant"),
     Item("plant3", "3.45", "Some Small Plant"),
@@ -38,11 +47,12 @@ items = [
     ]
 
 
-def get_item_by_name(name):
-    for i in items:
-        if i.name == name:
-            return i
-    raise Exception("Item %r not found" % name)
+# Special
+get_item_by_code("plant2").description = \
+      "A really long boring description one two three four blah foo baz blah foo baz hello"
+get_item_by_code("plant3").description = ""
+
+
 
 
 def get_view_cart_button():
@@ -92,6 +102,11 @@ def get_buy_button(item):
 
 
 def get_item_display_info(item):
+    """
+    - 1 cols on xs (default)
+    - 3 cols on small
+    - 4 cols on md/lg
+    """
     s = """
 <div class="item col-sm-4 col-md-3">
 <img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
@@ -125,9 +140,16 @@ def expand(l):
         yield get_view_cart_button()
     else:
         item_name_match = d["item_name_match"]
-        for item in items:
+        n = 0
+        for item in g_items:
             if item.item_number.startswith(item_name_match):
                 yield get_item_display_info(item)
+                n += 1
+                if n % 4 == 0:
+                  yield """<div class="clearfix visible-md-block visible-lg-block"></div>"""
+                if n % 3 == 0:
+                  yield """<div class="clearfix visible-sm-block"></div>"""
+
 
 
 def main():
