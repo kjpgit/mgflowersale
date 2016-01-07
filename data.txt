@@ -1,30 +1,65 @@
-flower, AGERATUM - Blue
-flower, ALYSSUM , Purple;White
-flower, ASTERS - Mixed
-flower, BEGONIAS , Bronze Leaf Red; Bronze Leaf Rose/Pink; Bronze Leaf White; Bronze Leaf Mixed; Green Leaf Red; Green Leaf Rose/Pink; Green Leaf White; Green Leaf Mixed
-flower, CELOSIA - Feather Mix
-flower, COLEUS - Mixed
-flower, COSMOS - Mixed
-flower, DAHLIA - Mixed
-flower, DIANTHUS - Mixed
-flower, DUSTY MILLER
-flower, GAZANIA - Mixed
-flower, IMPATIENS, Blue Pearl; Lilac; Lipstick; Pink; Red; Salmon; Violet; White; Mixed
-flower, LOBELIA - Blue
-flower, MARIGOLDS, Bonanza Bee (bi-color); Bonanza Orange; Bonanza Yellow; Bonanza Mix
-flower, HYBRID MARIGOLDS, Orange; Yellow; Vanilla (Sweet Cream)
-flower, MOSS ROSE - Portulaca Mixed
-flower, NICOTIANA - Mixed
-flower, PANSY - Mixed
-flower, PETUNIAS - Double Mixed
-flower, PETUNIAS - Single, Blue/Midnight; Pink; Red; White; Yellow; Mix
-flower, SALVIA, Red; Tall Red; Victoria Blue
-flower, SNAPDRAGON - Dwarf Mixed
-flower, SNAPDRAGON - Tall Mixed
-flower, VINCA, Mixed; Red; White/Eye
-flower, VIOLA - Penny Mix
-flower, ZINNIA - Dwarf Mixed
-flower, VERBENA - Mixed
-veg, PEPPERS, Green Bell; Red Bell; Yellow Bell; Jalapeno
-veg, TOMATOES, Beefsteak; Big Boy; Grape; Red Cherry; Roma - Italian Plum; Sweet 100
-
+Category,Quantity,Price,Item Name (Must be unique),Options - separated by ;,Description:,Info Link:,Shade Garden
+flower,half flat,8,AGERATUM - Blue,,"This ever-popular annual bears vibrant flower clusters that attract butterflies. 6"" High, Mix with Zinnia and Dahlia",http://bloomiq.com/ageratum,
+flower,half flat,8,ALYSSUM,Purple;White,"Low-growing carpet teems with the tiniest of flowers! A versatile annual that is equally effective spilling over the rims of containers, filling in cracks between flagstones or blanketing garden's edge. 6"" High",http://bloomiq.com/alyssum-5,
+flower,half flat,8,ASTERS - Mixed,,"Fall Blooming, 18"" High, Mix with Dianthus",http://bloomiq.com/aster-9,
+flower,half flat,8,BEGONIAS,Bronze Leaf Red; Bronze Leaf Rose/Pink; Bronze Leaf White; Bronze Leaf Mixed; Green Leaf Red; Green Leaf Rose/Pink; Green Leaf White; Green Leaf Mixed,"A popular choice with abundant, large flowers. Blooms early and continuously. Great for Shade. 12"" High. Mix with Zinnia, Celosia, and Dusty Miller ",http://bloomiq.com/begonia-0,x
+flower,half flat,8,CELOSIA - Feather Mix,,"Large flowers on easy-to-grow plants. Wonderful contrast between bold foliage and feathery or crested flowers. Well-suited for garden's edge or in combination plantings with sweet potato vine, spikes and trailing geranium. Unique addition to fresh or dried floral arrangements. 10-24"" High",http://bloomiq.com/celosia,
+flower,half flat,8,COLEUS - Mixed,,"Stunning colors and variegation patterns highlight the shaded garden. Combine these rich colors with complementary or contrasting flowers or foliages for a remarkable effect. Some varieties tolerate full sun when given ample moisture. 10-16"" High Mix with New Guineas",http://bloomiq.com/coleus-0,x
+flower,half flat,8,COSMOS - Mixed,,"Large, delicate flowers and lacy, fernlike foliage make a great addition to the middle of the flower bed or cutting garden. Eye-catching along walls or fences. 12""-48"" High.  Mix with Zinnia, Ageratum, and Dalhia",http://bloomiq.com/cosmos-4,
+flower,half flat,8,DAHLIA - Mixed,,"Vibrant flowers attract butterflies and hummingbirds. Lovely plants create a stunning display at garden's edge or in containers and window boxes. Excellent cut flowers. 10-18"" High. Mix with Snapdragon, Petunia, Begonia (pinch back for fuller appearance)",http://bloomiq.com/dahlia-0,
+flower,half flat,8,DIANTHUS - Mixed,,"These low-growing, dwarf plants make a splash in the landscape, with abundant flowers in a wide range of colors. Very effective when planted in large groupings, or used as accent in containers or window boxes. 10"" High. Mix with Aster and Dusty Miller",http://bloomiq.com/dianthus-2,
+flower,half flat,8,DUSTY MILLER,,"Wonderful for providing color contrast to the landscape. Intricate, silvery gray leaves are finely textured. Striking planted with red flowers, in large groups or added to combination pots. Mix with Ipomea Black for high contrast.",http://bloomiq.com/dusty-miller-2,
+flower,half flat,8,GAZANIA - Mixed,,"Cheerful flowers accent low-growing, carpet-forming foliage. A colorful addition to combination pots mixed with sweet potato vine, geranium and asparagus fern, or allow to fill in between flagstones or stone walls. Remove faded flowers to promote rebloom. 8-12"" High",http://bloomiq.com/gazania,
+flower,half flat,8,IMPATIENS,Blue Pearl; Lilac; Lipstick; Pink; Red; Salmon; Violet; White; Mixed,"Large, abundant flowers contrast beautifully with the rich, compact foliage. Highlights the shaded garden and is especially lovely in mixed containers, hanging baskets, at garden's edge, or anywhere a splash of color is desired. 8-10"" High.  Mix with Coleus and New Guinea",http://bloomiq.com/impatiens-48,x
+flower,half flat,8,LOBELIA - Blue,,"Low-growing growth bears vibrant dainty flowers in abundance. Invites butterflies and provides season-long color. Allow to gently cascade beyond the garden's edge, down a stone wall or over the rim of a container. 8"" High. Geranium, coleus, zinnia and spikes are all lovely complements.",http://bloomiq.com/lobelia-6,part shade
+flower,half flat,8,MARIGOLDS,Bonanza Bee (bi-color); Bonanza Orange; Bonanza Yellow; Bonanza Mix,"Vibrant flowers bloom above fragrant, highly divided foliage. Very attractive in combination with blue-spiked flowers. Use in Vegetable Garden to repel pests. 12"" High. Mix with Dusty Miller, Snapdragon, Bacopa",http://bloomiq.com/marigold-0,
+flower,half flat,8,HYBRID MARIGOLDS,Orange; Yellow; Vanilla (Sweet Cream),,,
+flower,half flat,8,MOSS ROSE - Portulaca Mixed,,"Very low growing plant that loves to be dry. Its foliage is almost needle-like, but fleshy. It’s often grown in rock gardens and looks great spilling over a wall or the edge of a container. Great for Xeriscaping.",http://www.buckscountrygardens.com/blog/2015/bucks-country-gardens/10-annuals-for-hot-dry-areas-confessions-of-a-darwinian-gardener/,
+flower,half flat,8,NICOTIANA - Mixed,,"A refreshing change from the old annual standbys, this mix offers star-shaped blooms in a wide range of vibrant colors. Plant at garden's edge or add to combination pots with lobelia, zinnia and Ipomea (sweet potato vine). 20-36"" HIgh",http://bloomiq.com/nicotiana-0,
+flower,half flat,8,PANSY - Mixed,,"A rainbow of bright flowers carpets the garden. Attractive cut flower and beautiful at garden's edge, in rock gardens or as a small-scale ground cover. Prefers cool weather. Excellent with spring and fall blooming plants. 9"" High. Mix with Coleus and Begonia Part Shade",http://bloomiq.com/pansy,part shade
+flower,half flat,8,PETUNIAS - Double Mixed,,"This all-time favorite enlivens the garden with a profusion of blooms and is irresistible to butterflies and hummingbirds. Splendid in hanging baskets and containers. Super planted with verbena, marigold, zinnia, geranium 15"" High",http://bloomiq.com/petunia-1,
+flower,half flat,8,PETUNIAS - Single,Blue/Midnight; Pink; Red; White; Yellow; Mix,,,
+flower,half flat,8,SALVIA,Red; Tall Red; Victoria Blue,"Create a vivid floral display with spikes of lovely flowers in shades of blue, pink or white. Plant in cottage or wild gardens, in large groups to emphasize its color, or in mixed container gardens. An excellent complement to any garden setting. 10""-36"" High. Mix with Dianthus",http://bloomiq.com/salvia-1,
+flower,half flat,8,SNAPDRAGON - Dwarf Mixed,,"An old-fashioned favorite prized for its beautiful flowers. Wonderful for attracting butterflies and hummingbirds to the garden. Outstanding as a cut flower. Great with zinnia, marigold, sweet potato vine and other sun-lovers. ",http://bloomiq.com/snapdragon,
+flower,half flat,8,SNAPDRAGON - Tall Mixed,,"An old-fashioned favorite prized for its beautiful flowers. Wonderful for attracting butterflies and hummingbirds to the garden. Outstanding as a cut flower. Great with zinnia, marigold, sweet potato vine and other sun-lovers. ",http://bloomiq.com/snapdragon,
+flower,half flat,8,VINCA,Mixed; Red; White/Eye,"Bright, cheerful flowers cover mounds of lush foliage. Great for attracting butterflies to gardens, patio tubs or hanging baskets. This superb summer performer thrives in hot locations near buildings or pavement. Lovely with dusty miller or grasses. 12"" HIgh",http://bloomiq.com/vinca-25,
+flower,half flat,8,VIOLA - Penny Mix,,"Profuse fragrant flowers carpet the early garden. Beautiful at garden's edge, in rock gardens, as a small-scale ground cover, and lovely in bouquets. 8""High. Mix with Coleus and Asparagus Fern",http://bloomiq.com/viola-17,
+flower,half flat,8,ZINNIA - Dwarf Mixed,,"This popular annual features brightly colored flowers that attract butterflies and hummingbirds to the garden. An outstanding cut flower. Frequent cutting for bouquets promotes reblooming. Mix with Salvia, Marigold, and Ageratum 12-36"" HIgh",http://bloomiq.com/zinnia,
+flower,half flat,8,VERBENA - Mixed,,"Outstanding selection with a profusion of large, vibrant flower clusters. A superb plant for the butterfly garden, at garden's edge, or trailing over stones and rock walls. Heat and drought tolerant. 10"" HIgh Great with Calibrachoa, Dusty Miller, and Petunia",http://bloomiq.com/verbena-17,
+veg,Ind,2,PEPPERS,Green Bell; Red Bell; Yellow Bell; Jalapeno,,,
+veg,Ind,2,TOMATOES,Beefsteak; Big Boy; Grape; Red Cherry; Roma - Italian Plum; Sweet 100,,,
+,6 pack,8,Easy Wave Petunia,Blue; Pink; Purple; Red; White,"Most awards for garden performance. Easiest petunia to grow in the garden or containers. 12"" High.  Mix with Zinnia, Marigold, or Begonia.",http://bloomiq.com/spreading-petunia-8,
+,3.5 pot,2,SPIKES - Dracaena,,"Long green, grasslike leaves grow upward from a common point, arching slightly until the leaf tips point down. A popular plant for adding height to a container garden. Very beautiful mixed with flowering plants. 12""-24"" HIgh",http://bloomiq.com/spikes,
+,3.5 pot,2,SPRENGERI - Asparagus Fern,,"Asparagus 'Sprengeri' makes a great filler for your combination planters
+ as well as in hanging baskets. 'Sprengeri' creates a dense, fluffy look
+ in your planters. The crisp green, needle like foliage adds interest 
+all season long. Mix with coleus or any bright colored annual flowers.",http://www.gardencrossings.com/plantname/Asparagus-Sprengeri,
+,3.5 pot,2,VINCA VINE,,"Beautiful variegated foliage, outstanding in combination plantings in window boxes, hanging baskets or other containers. Excellent as a seasonal ground cover. Lovely blue flowers are a bonus. 6"" HIgh.  Mix with Pansy, Seed Geranium, or Verbena.",http://bloomiq.com/vinca-vine,
+,3.5 pot,2,IPOMEA - Sweet Potato Vine,Green; Black,"Wonderful trailing foliage provides fabulous color contrast in the garden. Beautiful complement to both flowers and foliage, particularly yellow ones. Ideal as small-scale ground cover or cascading from planters or window boxes. 6"" High. Mix in a container with Calibrachoa and Spike",http://bloomiq.com/sweet-potato-vine-4,
+,3.5 pot,2,SEED GERANIUM,Lavender; Orange Bi-color; Violet; Pink; Deep Red; Coral; White,"Exceptionally large, long-lasting flowers on durable plants. Vibrant blossoms provide a season-long display of color and attract hummingbirds and butterflies. Lovely in mixed garden plantings and containers. 15"" HIgh. Mix with Calibrachoa and Dianthus",http://bloomiq.com/zonal-geranium,
+,4.3 pot,4,BACOPA - White,,"Cascading sprays of tiny flowers cover mounded plants. Outstanding as an airy filler in combination plantings or mixed containers, and wonderful in hanging baskets, as a small-scale ground cover, or at garden's edge. 8"" High.  Mix with Calibrachoa, Verbena, or Lobelia. Plant in Part Shade",http://bloomiq.com/bacopa,part shade
+,4.3 pot,4,BEGONIA - NON-STOP,Orange; Red; Yellow,"A popular choice with abundant, large flowers. Blooms early and continuously. Plant in Shade. 12""HIgh. Mix with Dusty Miller, Zinnia, or Celosia.",http://bloomiq.com/begonia-0,x
+,4.3 pot,4,CALIBRACHOA,Blue; Pink; Red; White; Yellow,"A profusion of miniature flowers in an array of vibrant colors bloom throughout the season. Attracts hummingbirds. Cascades beautifully from containers and window boxes, trails over stone walls, and is a wonderful edging for garden paths. 10"" HIgh. Mix with Vinca, Dusty Miller, or Salvia.",http://bloomiq.com/calibrachoa,
+,4.3 pot,4,DAHLIA - Assorted,,"Vibrant flowers attract butterflies and hummingbirds. Lovely plants create a stunning display at garden's edge or in containers and window boxes. Excellent cut flowers. 10-18"" High. Mix with Snapdragon, Petunia, Begonia (pinch back for fuller appearance)",http://bloomiq.com/dahlia-0,
+,4.3 pot,4,GERBERA DAISY,,"Brilliant daisies in a lovely assortment of colors. Long-lasting as a cut flower and lovely planted in containers or at garden's edge. Plant in Part Shade. 12"" High.  Mix in a container with Sprengeri (Asparagus Fern) and Spike.",http://bloomiq.com/gerbera,part shade
+,4.3 pot,4,DOUBLE IMPATIENS,Burgundy; Pink; Salmon; Lavender; White,,,
+,4.3 pot,4,NEW GUINEA Impatiens,Appleblossom; Frost (White); Grape Crush (Purple); Lavender; Orange; Hot Pink; Red,"Nonstop flowers in beautiful hues are offset by handsome, glossy foliage. Popularly used for adding lively color to containers and annual plantings. Particularly lovely in mixed containers and hanging baskets. 8-12"" High.  Plant in Part Shade",http://bloomiq.com/new-guinea-impatiens,Part Shade
+,,,,,,,
+,Each,16,"10"" BASIC HANGING BASKET - Begonia",,,,
+,Each,16,"10"" BASIC HANGING BASKET - Black Eyed Susan",,,,
+,Each,16,"10"" BASIC HANGING BASKET - Impatiens",,,,
+,Each,16,"10"" BASIC HANGING BASKET - Petunia",,,,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 1 Pink/White",,"Calibrachoa- Pink, Verbena - Twister Pink, Bacopa - White",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 2 Blue/Yellow",,"Calibrachoa - Blue, Bidens Yellow, Bacopa - Blue",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 3 Pink/Purple",,"Calibrachoa - Light Pink, Petunia - Purple/White, Verbena - Pink",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 4 Blue Yellow",,"Calibrachoa- Yellow, Petunia - Blue with White Rim, Verbena - White",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 5 Pink/Purple",,"Calibrachoa - Pink Hot Star, Petunia - Purple Rose, Verbena Dark Pink",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 6 Red/White",,"Zonal Geranium- Dark Red, Verbena - White",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 7 Double Impatiens",,"Double Impatiens Pink, Purple, White Great for Shade",,
+,Each,16,"10"" PREMIUM HANGING BASKET - Combo 8 Non-Stop Begonia",,"Non Stop Begonia - Assorted Colors, Lysmachia - Yellow Great for Shade",,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Combo 1",,"Geranium - Dark Red, Spike",,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Combo 6",,"Calibrachoa- Midnight Blue, Petunia - Sky Blue, Verbena - Cool Blue",,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Combo 7",,"Calibrachoa - Pink Star, Petunia - Purple Rose, Verbena Dark Pink",,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Combo 8",,"Calibrachoa - Orange, Petunia - Red, Verbena - Violet Blue",,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Assorted Sun",,?,,
+,Each,16,"10"" PREMIUM (COMBO) PATIO POT - Assorted Shade",,?,,

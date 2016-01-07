@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import csv
 import sys
 import json
 import decimal
@@ -7,36 +8,52 @@ g_items = []
 
 
 class Item(object):
-    def __init__(self, group, price, item_name, options):
+    def __init__(self, group, price, item_name, options, description, 
+                quantity):
         assert isinstance(group, str)
         assert isinstance(price, str)
         assert isinstance(item_name, str)
+        assert isinstance(description, str)
+        assert isinstance(quantity, str)
+
         self.group = group
-        self.item_number = item_name
         self.price = decimal.Decimal(price)
+        self.item_number = item_name
         self.item_name = item_name
-        self.description = "Some description goes here"
+        self.description = description
+        self.quantity = quantity
         self.options = options
 
 
-
 def load_data():
-    for l in open("data.txt"):
-        l = l.strip()
-        if not l:
+    f = open("data.txt", "rb")
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    n = 0
+    for row in reader:
+        n += 1
+        if n == 1:
             continue
-        parts = l.split(",")
-        assert len(parts) in (2, 3)
+        parts = [x.strip() for x in row]
+        assert len(parts) >= 6, "bad line %r" % row
 
-        code = parts[0].strip()
-        name = parts[1].strip()
-        options = None
-        if len(parts) > 2:
-            options = parts[2].split(";")
+        category = parts[0]
+        quantity = parts[1]
+        price = parts[2]
+        item_name = parts[3]
+        options = parts[4]
+        description = parts[5]
+
+        if not price:
+            price = "0.00"
+
+        if options:
+            options = options.split(";")
             options = [x.strip() for x in options]
             options = ("Choose Option", options)
 
-        load_item(code, "5.99", name, options)
+        item = Item(category, price, item_name, options, description,
+                    quantity)
+        load_item(item)
 
 
 def get_item_by_code(code):
@@ -46,8 +63,7 @@ def get_item_by_code(code):
     raise Exception("Item %r not found" % code)
 
 
-def load_item(*args, **kwargs):
-    item = Item(*args, **kwargs)
+def load_item(item):
     for i in g_items:
         if i.item_number == item.item_number:
             raise Exception("Duplicate item_number %r" % i.item_number)
@@ -107,7 +123,6 @@ def get_buy_button(item):
     options = ""
     if item.options:
         options += """
-            <br>
             <input type="hidden" name="on0" value="%s"><b>%s:</b>
              <select name="os0">
             """ % (item.options[0], item.options[0])
@@ -136,7 +151,7 @@ def get_item_display_info(item):
   <!--
   <p>Item Number: %(item_number)s</p>
   -->
-  <div class="price"><b>$%(price)s&nbsp;&nbsp;</b></div>
+  <div class="price"><b>$%(price)s&nbsp;-&nbsp;%(quantity)s</b></div>
   %(button)s
 </div>
 """
@@ -145,6 +160,7 @@ def get_item_display_info(item):
         item_name=item.item_name, 
         description=item.description,
         price=item.price,
+        quantity=item.quantity,
         button=get_buy_button(item))
 
 
