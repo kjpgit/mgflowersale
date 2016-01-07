@@ -24,6 +24,10 @@ h2 {
     margin-bottom: 30px;
 }
 
+.quantity {
+    color: gray;
+}
+
 .price {
     aafloat: left;
 }

@@ -43,6 +43,9 @@ def load_data():
         options = parts[4]
         description = parts[5]
 
+        if not category:
+            continue
+
         if not price:
             price = "0.00"
 
@@ -53,7 +56,11 @@ def load_data():
 
         item = Item(category, price, item_name, options, description,
                     quantity)
-        load_item(item)
+        try:
+            load_item(item)
+        except Exception as e:
+            sys.stderr.write("Error in line %d: %r\n" % (n, row))
+            raise e
 
 
 def get_item_by_code(code):
@@ -151,7 +158,11 @@ def get_item_display_info(item):
   <!--
   <p>Item Number: %(item_number)s</p>
   -->
-  <div class="price"><b>$%(price)s&nbsp;-&nbsp;%(quantity)s</b></div>
+  <div class="price">
+    <span class=quantity>%(quantity)s</span>
+    &nbsp;-&nbsp;
+    <b>$%(price)s</b>
+    </div>
   %(button)s
 </div>
 """
