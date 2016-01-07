@@ -118,7 +118,9 @@ def get_buy_button(item):
 
     <!-- Specify details about the item that buyers will purchase. -->
     <input type="hidden" name="item_name" value="%(item_name)s">
+    <!--
     <input type="hidden" name="item_number" value="%(item_number)s">
+    -->
     <input type="hidden" name="amount" value="%(amount)s">
 
     <input type="hidden" name="no_shipping" value="1">
