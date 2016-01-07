@@ -27,7 +27,7 @@
 
 <body>
 
-<nav class="navbar xxnavbar-inverse xxnavbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
 
     <div class="navbar-header">
@@ -41,9 +41,9 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-right navbar-nav">
-        <li><a href="#plants">Plants</a></li>
-        <li><a href="#shrubs">Shrubs</a></li>
-        <li><a href="#flowers">Flowers</a></li>
+        <li><a href="#1">Flowers</a></li>
+        <li><a href="#2">Vegetables</a></li>
+        <li><a href="#3">Containers and Baskets</a></li>
         <li>
         @{"button": "view_cart"}
         </li>
@@ -62,26 +62,29 @@
 </div>
 
 <div class="container">
-  <a name="flowers"></a> <h2>Flowers</h2>
+  <a class="section-link-target" name="1"></a> 
+  <h2>Flowers</h2>
   <div class="row">
     @{"item_name_match": "flower"}
   </div>
 
-  <a name="plants"></a> <h2>Vegetables</h2>
+  <a class="section-link-target" name="2"></a> 
+  <h2>Vegetables</h2>
   <div class="row">
     @{"item_name_match": "veg"}
   </div>
 
+  <a class="section-link-target" name="3"></a> 
   <h2>Container Accents</h2>
   <div class="row">
     @{"item_name_match": "Container Accents"}
   </div>
 
+  <a class="section-link-target" name="4"></a> 
   <h2>Ready to Use Baskets and Containers</h2>
   <div class="row">
     @{"item_name_match": "Ready to Use Baskets and Containers"}
   </div>
-
 
   <hr>
 

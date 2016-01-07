@@ -9,11 +9,11 @@ h1 {
 h2 {
     color: #008811 !important;
     background-color: #ddffdd;
-    margin-top: 1.5em;
     text-align: center;
 }
 
-.jumbotron {
+div.jumbotron {
+    margin-bottom: 0;
     background-color: #ddffdd;
 
 }
@@ -29,8 +29,12 @@ h2 {
 }
 
 .price {
-    aafloat: left;
+    xxfloat: left;
 }
 .vspace {
     height: 10px;
+}
+a.section-link-target {
+  display: block;
+  height: 50px;
 }
