@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import cgi
 import csv
 import sys
 import json
@@ -23,6 +24,10 @@ class Item(object):
         self.description = description
         self.quantity = quantity
         self.options = options
+
+
+def escape(s):
+    return cgi.escape(s, quote=True)
 
 
 def load_data():
@@ -129,19 +134,24 @@ def get_buy_button(item):
 """
     options = ""
     if item.options:
+        text = escape(item.options[0])
         options += """
             <input type="hidden" name="on0" value="%s"><b>%s:</b>
              <select name="os0">
-            """ % (item.options[0], item.options[0])
+            """ % (text, text)
 
         for opt in item.options[1]:
-            options += """<option value="%(v)s">%(v)s</option>""" % dict(v=opt)
+            options += """<option value="%(v)s">%(v)s</option>""" % \
+                dict(v=escape(opt))
 
         options += """</select><br><div class=vspace></div>"""
 
 
-    return s % dict(item_name=item.item_name, amount=item.price,
-            item_number=item.item_number, options=options)
+    return s % dict(
+            item_name=escape(item.item_name), 
+            amount=item.price,
+            item_number=escape(item.item_number), 
+            options=options)
 
 
 def get_item_display_info(item):
