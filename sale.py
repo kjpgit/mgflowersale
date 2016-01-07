@@ -25,14 +25,14 @@ def load_data():
         l = l.strip()
         if not l:
             continue
-        parts = l.split(";")
+        parts = l.split(",")
         assert len(parts) in (2, 3)
 
         code = parts[0].strip()
         name = parts[1].strip()
         options = None
         if len(parts) > 2:
-            options = parts[2].split(",")
+            options = parts[2].split(";")
             options = [x.strip() for x in options]
             options = ("Choose Option", options)
 
