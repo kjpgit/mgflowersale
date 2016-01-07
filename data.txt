@@ -1,0 +1,30 @@
+flower, AGERATUM - Blue
+flower, ALYSSUM , Purple;White
+flower, ASTERS - Mixed
+flower, BEGONIAS , Bronze Leaf Red; Bronze Leaf Rose/Pink; Bronze Leaf White; Bronze Leaf Mixed; Green Leaf Red; Green Leaf Rose/Pink; Green Leaf White; Green Leaf Mixed
+flower, CELOSIA - Feather Mix
+flower, COLEUS - Mixed
+flower, COSMOS - Mixed
+flower, DAHLIA - Mixed
+flower, DIANTHUS - Mixed
+flower, DUSTY MILLER
+flower, GAZANIA - Mixed
+flower, IMPATIENS, Blue Pearl; Lilac; Lipstick; Pink; Red; Salmon; Violet; White; Mixed
+flower, LOBELIA - Blue
+flower, MARIGOLDS, Bonanza Bee (bi-color); Bonanza Orange; Bonanza Yellow; Bonanza Mix
+flower, HYBRID MARIGOLDS, Orange; Yellow; Vanilla (Sweet Cream)
+flower, MOSS ROSE - Portulaca Mixed
+flower, NICOTIANA - Mixed
+flower, PANSY - Mixed
+flower, PETUNIAS - Double Mixed
+flower, PETUNIAS - Single, Blue/Midnight; Pink; Red; White; Yellow; Mix
+flower, SALVIA, Red; Tall Red; Victoria Blue
+flower, SNAPDRAGON - Dwarf Mixed
+flower, SNAPDRAGON - Tall Mixed
+flower, VINCA, Mixed; Red; White/Eye
+flower, VIOLA - Penny Mix
+flower, ZINNIA - Dwarf Mixed
+flower, VERBENA - Mixed
+veg, PEPPERS, Green Bell; Red Bell; Yellow Bell; Jalapeno
+veg, TOMATOES, Beefsteak; Big Boy; Grape; Red Cherry; Roma - Italian Plum; Sweet 100
+

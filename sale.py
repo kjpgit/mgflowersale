@@ -6,58 +6,37 @@ import decimal
 g_items = []
 
 
-#
-# Inventory
-# The order is useful; that's how they will be displayed on the page
-#
-def load_data():
-    load_item("plant1", "1.45", "Some Plant")
-    load_item("plant2", "2.45", "Another Plant")
-    load_item("plant3", "3.45", "Some Small Plant")
-    load_item("plant4", "4.45", "Some Medium Plant")
-    load_item("plant5", "5.45", "Some Large Plant")
-
-    load_item("shrub1", "100.99", "Some Shrub")
-    load_item("shrub2", "200.99", "Another Shrub")
-
-    load_item("flower4", "4.99", "Flower Y")
-    load_item("flower3", "3.99", "Flower X")
-    load_item("flower2", "2.99", "Flower Two")
-    load_item("flower1", "1.99", "Flower One")
-    load_item("flower7", "7.99", "Flower 7")
-    load_item("flower8", "8.99", "Flower 8")
-
-
-    # Special
-    get_item_by_code("plant2").description = (
-          "A really long boring description one two "
-          "three four blah foo baz blah foo baz hello"
-          "alpha beta gamma zebra doh blah foo baz blah hello")
-    get_item_by_code("plant3").description = ""
-
-    get_item_by_code("shrub1").description = (
-          "A really long boring description one two "
-          "three four blah foo baz blah foo baz hello"
-          "alpha beta gamma zebra doh blah foo baz blah hello")
-    get_item_by_code("shrub2").description = (
-          "A really long boring description one two "
-          "three four blah foo baz blah foo baz hello")
-
-    get_item_by_code("shrub2").options = \
-            ("Color", ["Red", "Blue", "Pink", "White"])
-
-
-
 class Item(object):
-    def __init__(self, item_number, price, item_name):
-        assert isinstance(item_number, str)
+    def __init__(self, group, price, item_name, options):
+        assert isinstance(group, str)
         assert isinstance(price, str)
         assert isinstance(item_name, str)
-        self.item_number = item_number
+        self.group = group
+        self.item_number = item_name
         self.price = decimal.Decimal(price)
         self.item_name = item_name
         self.description = "Some description goes here"
-        self.options = None
+        self.options = options
+
+
+
+def load_data():
+    for l in open("data.txt"):
+        l = l.strip()
+        if not l:
+            continue
+        parts = l.split(";")
+        assert len(parts) in (2, 3)
+
+        code = parts[0].strip()
+        name = parts[1].strip()
+        options = None
+        if len(parts) > 2:
+            options = parts[2].split(",")
+            options = [x.strip() for x in options]
+            options = ("Choose Option", options)
+
+        load_item(code, "5.99", name, options)
 
 
 def get_item_by_code(code):
@@ -126,7 +105,7 @@ def get_buy_button(item):
     if item.options:
         options += """
             <br>
-            <input type="hidden" name="on0" value="%s"><b>Choose %s:</b>
+            <input type="hidden" name="on0" value="%s"><b>%s:</b>
              <select name="os0">
             """ % (item.options[0], item.options[0])
 
@@ -181,7 +160,7 @@ def expand(l):
         item_name_match = d["item_name_match"]
         n = 0
         for item in g_items:
-            if item.item_number.startswith(item_name_match):
+            if item.group.startswith(item_name_match):
                 yield get_item_display_info(item)
                 # clearfix so columns of unequal height don't mess up layout
                 n += 1
