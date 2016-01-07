@@ -138,9 +138,9 @@ def get_buy_button(item):
     if item.options:
         text = escape(item.options[0])
         options += """
-            <input type="hidden" name="on0" value="%s"><b>%s:</b>
+            <input type="hidden" name="on0" value="Option"><b>%s:</b>
              <select name="os0">
-            """ % (text, text)
+            """ % (text,)
 
         for opt in item.options[1]:
             options += """<option value="%(v)s">%(v)s</option>""" % \
