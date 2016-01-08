@@ -2,6 +2,7 @@
 import os
 import sys
 import subprocess
+import shutil
 
 import sale
 
@@ -35,14 +36,15 @@ def get_info(f):
 sale.load_data()
 total_size = 0
 for item in sale.g_items:
-    f = item.image_file
-    if not os.path.exists(f):
-        err("not found: %s" % f)
+    dest = item.image_file
+    src = dest.replace("thumbs/", "images/")
+    if not os.path.exists(src):
+        err("not found: %s" % src)
     else:
-        info = get_info(f)
+        info = get_info(src)
         print info["File size"], info["Format"], \
                 info["Height"], info['Width'], info['name']
         total_size += float(info["File size"].split()[0])
+        shutil.copy(src, dest)
 
 sys.stderr.write("total file size: %s\n" % total_size)
-

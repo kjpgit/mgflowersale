@@ -56,9 +56,9 @@ def load_data():
         if not price:
             price = "0.00"
         if not image_file:
-            image_file = "images/under-construction.jpg"
+            image_file = "thumbs/under-construction.jpg"
         else:
-            image_file = "images/" + image_file
+            image_file = "thumbs/" + image_file
 
         if options:
             options = options.split(";")
