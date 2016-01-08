@@ -10,7 +10,7 @@ g_items = []
 
 class Item(object):
     def __init__(self, group, price, item_name, options, description, 
-                quantity):
+                quantity, image_file):
         assert isinstance(group, str)
         assert isinstance(price, str)
         assert isinstance(item_name, str)
@@ -24,6 +24,7 @@ class Item(object):
         self.description = description
         self.quantity = quantity
         self.options = options
+        self.image_file = image_file
 
 
 def escape(s):
@@ -39,7 +40,7 @@ def load_data():
         if n == 1:
             continue
         parts = [x.strip() for x in row]
-        assert len(parts) >= 6, "bad line %r" % row
+        assert len(parts) >= 10, "bad line %r" % row
 
         category = parts[0]
         quantity = parts[1]
@@ -47,12 +48,17 @@ def load_data():
         item_name = parts[3]
         options = parts[4]
         description = parts[5]
+        image_file = parts[9]
 
         if not category:
-            continue
+            continue # blank row
 
         if not price:
             price = "0.00"
+        if not image_file:
+            image_file = "images/under-construction.jpg"
+        else:
+            image_file = "images/" + image_file
 
         if options:
             options = options.split(";")
@@ -60,7 +66,7 @@ def load_data():
             options = ("Choose Option", options)
 
         item = Item(category, price, item_name, options, description,
-                    quantity)
+                    quantity, image_file)
         try:
             load_item(item)
         except Exception as e:
@@ -164,7 +170,7 @@ def get_item_display_info(item):
     """
     s = """
 <div class="item col-sm-4 col-md-3">
-<img class="xxcenter-block img-responsive" src="images/zinnia.png"></img>
+<img class="item-image img-responsive" src="%(image)s"></img>
   <h4 class="xxtext-center">%(item_name)s</h4>
   <p>%(description)s</p>
   <!--
@@ -184,6 +190,7 @@ def get_item_display_info(item):
         description=item.description,
         price=item.price,
         quantity=item.quantity,
+        image=item.image_file,
         button=get_buy_button(item))
 
 
