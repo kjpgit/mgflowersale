@@ -18,6 +18,18 @@ div.jumbotron {
 
 }
 
+nav.navbar-default {
+  border-bottom: 1px solid black;
+  background-color: #008811;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: white;
+}
+
 
 .item {
     margin-top: 20px;
