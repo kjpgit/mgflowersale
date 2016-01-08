@@ -32,7 +32,7 @@ def escape(s):
 
 
 def load_data():
-    f = open("src/data.txt", "rb")
+    f = open("src/data.csv", "rb")
     reader = csv.reader(f, delimiter=',', quotechar='"')
     n = 0
     for row in reader:
