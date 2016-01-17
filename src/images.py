@@ -4,7 +4,7 @@ import sys
 import subprocess
 import shutil
 
-import sale
+import generate
 
 
 def err(s):
@@ -33,9 +33,9 @@ def get_info(f):
     return ret
 
 
-sale.load_data()
+generate.load_data()
 total_size = 0
-for item in sale.g_items:
+for item in generate.g_items:
     dest = item.image_file
     src = dest.replace("thumbs/", "images/")
     if not os.path.exists(src):

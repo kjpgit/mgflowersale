@@ -218,11 +218,11 @@ def get_items(filter):
 
 def main():
     load_data()
-    env = Environment(loader=FileSystemLoader('src'))
+    env = Environment(loader=FileSystemLoader('src/templates'))
     env.globals['get_view_cart_button'] = get_view_cart_button
     env.globals['get_items'] = get_items
 
-    template = env.get_template('sale.html')
+    template = env.get_template('index.html')
     out = template.render()
     with open("index.html", "w") as f:
         f.write(out.encode("utf-8"))

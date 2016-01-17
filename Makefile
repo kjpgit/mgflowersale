@@ -1,7 +1,7 @@
 .PHONY: build test sync
 
 build:
-	./src/sale.py
+	./src/generate.py
 	./src/images.py | sort -g
 
 sync:
