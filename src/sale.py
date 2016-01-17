@@ -227,6 +227,11 @@ def main():
     with open("index.html", "w") as f:
         f.write(out.encode("utf-8"))
 
+    template = env.get_template('info.html')
+    out = template.render()
+    with open("info.html", "w") as f:
+        f.write(out.encode("utf-8"))
+
 
 if __name__ == "__main__":
     main()

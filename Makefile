@@ -1,7 +1,7 @@
 .PHONY: build test sync
 
 build:
-	./src/sale.py < src/template.html > index.html
+	./src/sale.py
 	./src/images.py | sort -g
 
 sync:
@@ -9,5 +9,3 @@ sync:
 
 test:
 	nohup python -m SimpleHTTPServer 8002 &
-
-

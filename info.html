@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <link rel="icon" href="favicon.ico">
 
-<title>{% block title %}{% endblock %}</title>
+<title>Flower Sale Info</title>
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -47,7 +47,23 @@
         <li><a href="/#4">Baskets</a></li>
         <li><a href="/info.html">Info</a></li>
         <li>
-        {{ get_view_cart_button() }}
+        
+<!-- view cart button -->
+<form class="navbar-form navbar-right" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart View Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="display" value="1">
+
+    <!-- Display the View Cart button. -->
+    <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif"
+       alt="PayPal - The safer, easier way to pay online">
+</form>
+
         </li>
       </ul>
     </div>
@@ -55,8 +71,22 @@
   </div>
 </nav>
 
-{% block content %}
-{% endblock %}
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>A Flower Sale!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+  </div>
+</div>
+
+
+  <hr>
+
+</div> <!-- /container -->
+
+
 
 <!-- Bootstrap core JavaScript
     ================================================== -->
