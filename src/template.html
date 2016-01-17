@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <link rel="icon" href="favicon.ico">
 
-<title>Karl Flower Sale</title>
+<title>{% block title %}{% endblock %}</title>
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -46,7 +46,7 @@
         <li><a href="#3">Foliage</a></li>
         <li><a href="#4">Baskets</a></li>
         <li>
-        @{"button": "view_cart"}
+        {{ get_view_cart_button() }}
         </li>
       </ul>
     </div>
@@ -54,43 +54,8 @@
   </div>
 </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>A Flower Sale!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-  </div>
-</div>
-
-<div class="container">
-  <a class="section-link-target" name="1"></a> 
-  <h2>Flowers</h2>
-  <div class="row">
-    @{"item_name_match": "flower"}
-  </div>
-
-  <a class="section-link-target" name="2"></a> 
-  <h2>Vegetables</h2>
-  <div class="row">
-    @{"item_name_match": "veg"}
-  </div>
-
-  <a class="section-link-target" name="3"></a> 
-  <h2>Foliage Plants</h2>
-  <div class="row">
-    @{"item_name_match": "Foliage"}
-  </div>
-
-  <a class="section-link-target" name="4"></a> 
-  <h2>Ready to Use Baskets and Containers</h2>
-  <div class="row">
-    @{"item_name_match": "Ready to Use Baskets and Containers"}
-  </div>
-
-  <hr>
-
-</div> <!-- /container -->
-
+{% block content %}
+{% endblock %}
 
 <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -101,4 +66,3 @@
 
 </body>
 </html>
-

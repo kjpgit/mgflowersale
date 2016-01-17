@@ -5,6 +5,9 @@ import sys
 import json
 import decimal
 
+from jinja2 import Environment, FileSystemLoader
+
+
 g_items = []
 
 
@@ -14,7 +17,6 @@ class Item(object):
         assert isinstance(group, str)
         assert isinstance(price, str)
         assert isinstance(item_name, str)
-        assert isinstance(description, str)
         assert isinstance(quantity, str)
 
         self.group = group
@@ -47,7 +49,7 @@ def load_data():
         price = parts[2]
         item_name = parts[3]
         options = parts[4]
-        description = parts[5]
+        description = parts[5].decode("utf-8")
         image_file = parts[9]
 
         if not category:
@@ -194,39 +196,36 @@ def get_item_display_info(item):
         button=get_buy_button(item))
 
 
-def expand(l):
-    l = l.strip()
-    assert l.startswith("@{")
-    assert l.endswith("}")
-    l = l.strip()[1:]
-    d = json.loads(l)
+def get_items_g(filter):
+    n = 0
+    for item in g_items:
+        if item.group.startswith(filter):
+            yield get_item_display_info(item)
+            # clearfix so columns of unequal height don't mess up layout
+            n += 1
+            if n % 4 == 0:
+              yield """<div class="clearfix visible-md-block visible-lg-block"></div>"""
+            if n % 3 == 0:
+              yield """<div class="clearfix visible-sm-block"></div>"""
 
-    button = d.get("button", "")
-    if button:
-        assert button == "view_cart"
-        yield get_view_cart_button()
-    else:
-        item_name_match = d["item_name_match"]
-        n = 0
-        for item in g_items:
-            if item.group.startswith(item_name_match):
-                yield get_item_display_info(item)
-                # clearfix so columns of unequal height don't mess up layout
-                n += 1
-                if n % 4 == 0:
-                  yield """<div class="clearfix visible-md-block visible-lg-block"></div>"""
-                if n % 3 == 0:
-                  yield """<div class="clearfix visible-sm-block"></div>"""
+
+def get_items(filter):
+    s = u""
+    for i in get_items_g(filter):
+        s += i
+    return s
 
 
 def main():
     load_data()
-    for l in sys.stdin:
-        if l.strip().startswith("@{"):
-            for l in expand(l):
-                sys.stdout.write(l)
-        else:
-            sys.stdout.write(l)
+    env = Environment(loader=FileSystemLoader('src'))
+    env.globals['get_view_cart_button'] = get_view_cart_button
+    env.globals['get_items'] = get_items
+
+    template = env.get_template('sale.html')
+    out = template.render()
+    with open("index.html", "w") as f:
+        f.write(out.encode("utf-8"))
 
 
 if __name__ == "__main__":
