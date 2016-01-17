@@ -1,0 +1,4 @@
+These are jinja2 HTML templates.
+This is so we don't have to copy and paste boilerplate html (navigation,
+styles).
+
