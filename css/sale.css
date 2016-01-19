@@ -13,6 +13,11 @@ nav.navbar-default {
     background-color: black !important;
 }
 
+body {
+  /* fixed nav bar on top */
+  padding-top: 50px;
+}
+
 
 h1 {
     color: #008811 !important;
@@ -25,6 +30,8 @@ h2 {
 div.jumbotron {
     margin-bottom: 0;
     background-color: #ddffdd;
+    padding-bottom: 0;
+    padding-top: 0;
 
 }
 a.section-link-target {
