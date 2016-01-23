@@ -132,7 +132,9 @@ def get_buy_button(item):
     <input type="hidden" name="amount" value="%(amount)s">
 
     <input type="hidden" name="no_shipping" value="1">
+    <!--
     <input type="hidden" name="return" value="http://karl:8002/thankyou.html">
+    -->
 
     %(options)s
 
