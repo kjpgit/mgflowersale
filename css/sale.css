@@ -1,4 +1,5 @@
 nav.navbar-default {
+  /* instead of transparent border */
   border-bottom: 1px solid black;
   background-color: #008811;
 }
@@ -10,12 +11,13 @@ nav.navbar-default {
 .navbar-default .navbar-nav>li>a {
   color: white;
 }
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
   color: white;
   text-decoration: underline;
 }
 .icon-bar {
-    background-color: black !important;
+  background-color: white !important;
 }
 
 body {
@@ -25,18 +27,19 @@ body {
 
 
 h1 {
-    color: #008811 !important;
+  color: #008811 !important;
 }
 h2 {
-    color: #008811 !important;
-    background-color: #ddffdd;
-    text-align: center;
+  color: #008811 !important;
+  background-color: #ddffdd;
+  text-align: center;
 }
+
 div.jumbotron {
-    margin-bottom: 0;
-    background-color: #ddffdd;
-    padding-bottom: 0;
-    padding-top: 0;
+  margin-bottom: 0;
+  background-color: #ddffdd;
+  padding-bottom: 0;
+  padding-top: 0;
 
 }
 a.section-link-target {
@@ -46,15 +49,12 @@ a.section-link-target {
 
 
 .item {
-    margin-top: 20px;
-    margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .quantity {
-    color: gray;
+  color: gray;
 }
-.price {
-    xxfloat: left;
-}
-.vspace {
-    height: 10px;
+div.vspace {
+  height: 10px;
 }
