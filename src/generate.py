@@ -158,9 +158,14 @@ def get_buy_button(item):
 
         options += """</select><br><div class=vspace></div>"""
 
+    paypal_name = item.item_name
+    if item.quantity.strip() == "24 Plants (half flat)":
+        paypal_name += " (Half Flat)"
+    #if item.quantity.strip() == "6 Plants ":
+        #paypal_name += " (6 Plants"
 
     return s % dict(
-            item_name=escape(item.item_name), 
+            item_name=escape(paypal_name), 
             amount=item.price,
             item_number=escape(item.item_number), 
             options=options)
@@ -188,6 +193,7 @@ def get_item_display_info(item):
   %(button)s
 </div>
 """
+
     return s % dict(
         item_number=item.item_number,
         item_name=item.item_name, 
