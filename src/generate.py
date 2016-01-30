@@ -158,13 +158,19 @@ def get_buy_button(item):
 
         options += """</select><br><div class=vspace></div>"""
 
+    # In the paypal cart, add a quantity description to the item name for
+    # things that aren't single packs
     paypal_name = item.item_name
-    if item.quantity.strip() == "24 Plants (half flat)":
-        paypal_name += " (Half Flat)"
-    if item.quantity.strip() == "6 Plants":
-        paypal_name += " (6 Plants)"
-    if item.quantity.strip() == "4 Plants":
-        paypal_name += " (4 Plants)"
+    quantity_helper = dict()
+    quantity_helper["24 Plants (half flat)"] = " (Half Flat)"
+    quantity_helper["6 Plants"] = " (6 Plants)"
+    quantity_helper["4 Plants"] = " (4 Plants)"
+    quantity_helper["3.5 Inch Pot"] = None
+    quantity_helper["4.3 Inch Pot"] = None
+    quantity_helper["Each"] = None
+    extra = quantity_helper[item.quantity]
+    if extra:
+        paypal_name += extra
 
     return s % dict(
             item_name=escape(paypal_name), 
