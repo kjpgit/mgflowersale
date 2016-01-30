@@ -163,6 +163,8 @@ def get_buy_button(item):
         paypal_name += " (Half Flat)"
     if item.quantity.strip() == "6 Plants":
         paypal_name += " (6 Plants)"
+    if item.quantity.strip() == "4 Plants":
+        paypal_name += " (4 Plants)"
 
     return s % dict(
             item_name=escape(paypal_name), 
