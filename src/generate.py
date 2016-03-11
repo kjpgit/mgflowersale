@@ -95,10 +95,10 @@ def load_item(item):
 def get_view_cart_button():
     s = """
 <!-- view cart button -->
-<form class="navbar-form navbar-right" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<form class="navbar-form navbar-right" target="_self" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
     <!-- Identify your business so that you can collect the payments. -->
-    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+    <input type="hidden" name="business" value="mg203treasurer@gmail.com">
 
     <!-- Specify a PayPal Shopping Cart View Cart button. -->
     <input type="hidden" name="cmd" value="_cart">
@@ -116,9 +116,9 @@ def get_view_cart_button():
 def get_buy_button(item):
     s = """
 <!-- add to cart button -->
-<form class="addcart" target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<form class="addcart" target="_self" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <!-- Identify your business so that you can collect the payments. -->
-    <input type="hidden" name="business" value="karl.pickett-facilitator@gmail.com">
+    <input type="hidden" name="business" value="mg203treasurer@gmail.com">
 
     <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
     <input type="hidden" name="cmd" value="_cart">
