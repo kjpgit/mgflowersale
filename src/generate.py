@@ -320,10 +320,81 @@ def crunch_orders():
     print "TOTAL Retail Price of Items", total
 
 
+def print_orders():
+    f = open("Flower Sale CSV 4-14-16.csv", "rb")
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    header = reader.next()
+
+    total = 0
+    groups = {}
+
+    for row in reader:
+        obj = to_dict(row, header)
+        if obj["Type"] == "Shopping Cart Item":
+            if obj["Status"] not in ("Completed", "Cleared", "Uncleared"):
+                raise Exception("bad", obj)
+
+            person = obj["From Email Address"].lower()
+            if person not in groups:
+                groups[person] = []
+
+            groups[person].append(obj)
+
+    people = groups.keys()
+    people.sort()
+
+    print """
+    <html>
+
+    <head>
+    <style>
+    td { min-width: 40px; padding: 4px; }
+    .dum { min-width: 30px; }
+
+    table, th, td { border: 1px solid black;     border-collapse: collapse; }
+    h1, h2 { display: inline-block; }
+    </style>
+    </head>
+
+    <body>
+    """.strip()
+
+    n = 0
+    for k in people:
+        n += 1
+        orders = groups[k]
+        print "<h1>#%s&nbsp;&nbsp;</h1>" % n
+        print "<h2>%s (%s)</h2>" % (orders[0]["Name"], k)
+        print "<table>"
+        for item in orders:
+            #print json.dumps(item, indent=2)
+            dump_pickup_item(item)
+        print "</table>"
+        print '<p style="page-break-after:always;"></p>'
+
+    print """
+    </body>
+    </html>
+    """.strip()
+
+    sys.exit(0)
+
+
+def dump_pickup_item(obj):
+    quant = int(obj["Quantity"])
+    assert quant >= 1
+    title = obj["Item Title"]
+    option = obj["Option 1 Value"]
+    print "<tr><td class='dum'><td>%s<td>%s<td>%s</tr>" % (
+            escape(title), option, quant)
+
+
+
 
 def main():
     load_data()
-    crunch_orders()
+    #crunch_orders()
+    print_orders()
     env = Environment(loader=FileSystemLoader('src/templates'))
     env.globals['get_view_cart_button'] = get_view_cart_button
     env.globals['get_items'] = get_items
