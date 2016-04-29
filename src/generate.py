@@ -13,7 +13,7 @@ g_items = []
 
 class Item(object):
     def __init__(self, group, price, item_name, options, description, 
-                quantity, image_file):
+                quantity, image_file, min_quant):
         assert isinstance(group, str)
         assert isinstance(price, str)
         assert isinstance(item_name, str)
@@ -27,6 +27,7 @@ class Item(object):
         self.quantity = quantity
         self.options = options
         self.image_file = image_file
+        self.min_quant = int(min_quant)
 
 
 def escape(s):
@@ -51,6 +52,7 @@ def load_data():
         options = parts[4]
         description = parts[5].decode("utf-8")
         image_file = parts[9]
+        min_quant = parts[10]
 
         if not category:
             continue # blank row
@@ -68,7 +70,7 @@ def load_data():
             options = ("Choose Option", options)
 
         item = Item(category, price, item_name, options, description,
-                    quantity, image_file)
+                    quantity, image_file, min_quant)
         try:
             load_item(item)
         except Exception as e:
@@ -234,8 +236,94 @@ def get_items(filter):
     return s
 
 
+def crunch_orders2():
+    f = open("Flower Sale CSV 4-14-16.csv", "rb")
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    row = reader.next()
+    header = {}
+    for k, v in enumerate(row):
+        header[v.strip()] = k
+
+    carts = {}
+    for row in reader:
+        parts = [x.strip() for x in row]
+
+        def _get(t):
+            return parts[header[t]]
+
+        itype = _get("Type")
+        txn = _get("Transaction ID")
+        if itype in ("Shopping Cart Payment Received",):
+            print itype, txn
+            assert txn not in carts
+            obj = {}
+            obj["top"] = parts
+            obj[""] = parts
+            carts[txn] = {}
+
+        if itype in ("Shopping Cart Item",):
+            txns[txn].append(parts)
+
+    print json.dumps(txns, indent=2)
+
+    sys.exit(0)
+
+
+def to_dict(row, header):
+    parts = [x.strip() for x in row]
+    ret = {}
+    for k, v in enumerate(row):
+        ret[header[k].strip()] = v.strip()
+    return ret
+
+def crunch_orders():
+    f = open("Flower Sale CSV 4-14-16.csv", "rb")
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    header = reader.next()
+
+    total = 0
+    groups = {}
+    min_quants = {}
+
+    for row in reader:
+        obj = to_dict(row, header)
+        if obj["Type"] == "Shopping Cart Item":
+            quant = int(obj["Quantity"])
+            assert quant >= 1
+            title = obj["Item Title"]
+            real_title = title.replace(" (4 Plants)", "")
+            real_title = real_title.replace(" (6 Plants)", "")
+            real_title = real_title.replace(" (Half Flat)", "")
+            item = get_item_by_code(real_title)
+            option = obj["Option 1 Value"]
+            if option:
+                title += " " + option
+            if title not in groups:
+                groups[title] = 0
+                min_quants[title] = item.min_quant
+            groups[title] += quant
+            total += quant * item.price
+            #print json.dumps(obj, indent=2)
+
+
+    for k in sorted(groups.keys()):
+        quant = groups[k]
+        min_quant = min_quants[k]
+
+        rounded = quant
+        diff = quant % min_quant
+        if diff:
+            rounded += (min_quant - diff)
+        print "%s,%s,%s,%s" % (k, quant, min_quant, rounded)
+
+    print "---"
+    print "TOTAL Retail Price of Items", total
+
+
+
 def main():
     load_data()
+    crunch_orders()
     env = Environment(loader=FileSystemLoader('src/templates'))
     env.globals['get_view_cart_button'] = get_view_cart_button
     env.globals['get_items'] = get_items
