@@ -359,11 +359,15 @@ def print_orders():
     <body>
     """.strip()
 
-    n = 0
-    for k in people:
-        n += 1
+    print "<pre>"
+    for n, k in enumerate(people):
+        sys.stdout.write("%-10d%s\n" % (n+1, k))
+    print "</pre>"
+    print '<p style="page-break-after:always;"></p>'
+
+    for n, k in enumerate(people):
         orders = groups[k]
-        print "<h1>#%s&nbsp;&nbsp;</h1>" % n
+        print "<h1>#%s&nbsp;&nbsp;</h1>" % (n + 1)
         print "<h2>%s</h2>" % (orders[0]["Name"])
         print "<table>"
         for item in sorted(orders, key=lambda x: x["Item Title"].lower()):
