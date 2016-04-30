@@ -320,28 +320,25 @@ def crunch_orders():
     print "TOTAL Retail Price of Items", total
 
 
-def print_orders():
-    #f = open("Flower Sale CSV 4-14-16.csv", "rb")
-    f = open("/tmp/Individual.csv", "rb")
+def load_orders(groups, fname):
+    f = open(fname, "rb")
     reader = csv.reader(f, delimiter=',', quotechar='"')
     header = reader.next()
-
-    total = 0
-    groups = {}
-
     for row in reader:
         obj = to_dict(row, header)
         if obj["Type"] == "Shopping Cart Item":
             if obj["Status"] not in ("Completed", "Cleared", "Uncleared"):
                 raise Exception("bad", obj)
-
-            person = obj["From Email Address"].lower()
-            if not person:
-                person = obj["Name"]
+            person = obj["Name"].lower()
             if person not in groups:
                 groups[person] = []
-
             groups[person].append(obj)
+
+
+def print_orders():
+    groups = {}
+    load_orders(groups, "Flower Sale CSV 4-14-16.csv")
+    load_orders(groups, "/tmp/Individual.csv")
 
     people = groups.keys()
     people.sort()
@@ -367,7 +364,7 @@ def print_orders():
         n += 1
         orders = groups[k]
         print "<h1>#%s&nbsp;&nbsp;</h1>" % n
-        print "<h2>%s (%s)</h2>" % (orders[0]["Name"], k)
+        print "<h2>%s</h2>" % (orders[0]["Name"])
         print "<table>"
         for item in sorted(orders, key=lambda x: x["Item Title"].lower()):
             #print json.dumps(item, indent=2)
