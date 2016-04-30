@@ -321,7 +321,8 @@ def crunch_orders():
 
 
 def print_orders():
-    f = open("Flower Sale CSV 4-14-16.csv", "rb")
+    #f = open("Flower Sale CSV 4-14-16.csv", "rb")
+    f = open("/tmp/Individual.csv", "rb")
     reader = csv.reader(f, delimiter=',', quotechar='"')
     header = reader.next()
 
@@ -335,6 +336,8 @@ def print_orders():
                 raise Exception("bad", obj)
 
             person = obj["From Email Address"].lower()
+            if not person:
+                person = obj["Name"]
             if person not in groups:
                 groups[person] = []
 
@@ -366,7 +369,7 @@ def print_orders():
         print "<h1>#%s&nbsp;&nbsp;</h1>" % n
         print "<h2>%s (%s)</h2>" % (orders[0]["Name"], k)
         print "<table>"
-        for item in orders:
+        for item in sorted(orders, key=lambda x: x["Item Title"].lower()):
             #print json.dumps(item, indent=2)
             dump_pickup_item(item)
         print "</table>"
