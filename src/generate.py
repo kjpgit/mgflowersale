@@ -95,7 +95,6 @@ def load_item(item):
 
 
 def get_view_cart_button():
-    return ""
     s = """
 <!-- view cart button -->
 <form class="navbar-form navbar-right" target="_self" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -117,7 +116,6 @@ def get_view_cart_button():
     
 
 def get_buy_button(item):
-    return ""
     s = """
 <!-- add to cart button -->
 <form class="addcart" target="_self" action="https://www.paypal.com/cgi-bin/webscr" method="post">
